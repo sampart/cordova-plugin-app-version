@@ -1,14 +1,14 @@
 (function (cordova) {
-  // Returns a jQuery deferred object, or pass a callback if you don't want to use jQuery
-  cordova.getAppVersion = function (callback) {
+  // Returns a jQuery deferred object, or pass a success and fail callbacks if you don't want to use jQuery
+  cordova.getAppVersion = function (success, fail) {
     var dfr = null;
-    if ((typeof callback) === 'undefined' && jQuery) {
+    if ((typeof success) === 'undefined' && jQuery) {
       dfr = jQuery.Deferred();
-      callback = dfr.resolve;
+      success = dfr.resolve;
+      fail = dfr.reject;
     }
-    // Plugin doesn't even have a failure callback, so we pass null
     // 5th param is NOT optional. must be at least empty array
-    cordova.exec(callback, null, "AppVersion", "getVersionNumber", []);
+    cordova.exec(success, fail, "AppVersion", "getVersionNumber", []);
     return dfr;
   };
 }(cordova));
