@@ -4,7 +4,7 @@
     id="co.uk.whiteoctober.cordova.AppVersion"
     version="0.0.1">
 
-    <name>Cordova AppVersion</name>
+    <name>AppVersion</name>
     <description>
         This plugin will return the version of your App that you have set in
         packaging it. I.e. it will always match the version in the app store.
