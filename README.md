@@ -17,4 +17,4 @@ If not:
 Written by Robert (Jamie) Munro, based the following stack overflow posts:
 
 * [iOS](http://stackoverflow.com/a/14713364/3408)
-* [Android](http://stackoverflow.com/a/363768699/3408)
+* [Android](http://stackoverflow.com/a/3637686/3408)
