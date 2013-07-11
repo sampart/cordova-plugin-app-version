@@ -14,4 +14,7 @@ If not:
         alert(version);
     });
 
-Written by Robert (Jamie) Munro, based on [this](http://stackoverflow.com/a/14713364/3408) stack overflow answer.
+Written by Robert (Jamie) Munro, based the following stack overflow posts:
+
+* [iOS](http://stackoverflow.com/a/14713364/3408)
+* [Android](http://stackoverflow.com/a/363768699/3408)

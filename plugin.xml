@@ -14,6 +14,17 @@
        <clobbers target="cordova.getAppVersion" />
     </js-module>
     
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="plugins">
+            <plugin name="AppVersion" value="uk.co.whiteoctober.cordova.AppVersion" />
+        </config-file>
+
+        <!-- cordova plugin src files -->
+        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova/AppVersion.java" />
+    </platform>
+
     <!-- ios -->
     <platform name="ios">
         <plugins-plist key="AppVersion" />
