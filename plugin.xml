@@ -18,7 +18,7 @@
     <platform name="ios">
         <plugins-plist key="AppVersion" />
 
-        <header-file src="AppVersion.h" />
-        <source-file src="AppVersion.m" />
+        <header-file src="src/ios/AppVersion.h" />
+        <source-file src="src/ios/AppVersion.m" />
     </platform>
 </plugin>
