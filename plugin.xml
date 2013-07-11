@@ -18,6 +18,10 @@
     <platform name="ios">
         <plugins-plist key="AppVersion" />
 
+        <config-file target="config.xml" parent="plugins">
+            <plugin name="AppVersion" value="AppVersion" />
+        </config-file>
+
         <header-file src="src/ios/AppVersion.h" />
         <source-file src="src/ios/AppVersion.m" />
     </platform>
