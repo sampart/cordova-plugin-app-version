@@ -11,7 +11,7 @@
     </description>
     
     <js-module src="www/AppVersionPlugin.js">
-       <clobbers target="corodva.appversion" />
+       <clobbers target="cordova.getAppVersion" />
     </js-module>
     
     <!-- ios -->
