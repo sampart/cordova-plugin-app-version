@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="co.uk.whiteoctober.cordova.AppVersion"
+    id="uk.co.whiteoctober.cordova.AppVersion"
     version="0.0.1">
 
     <name>AppVersion</name>
@@ -25,17 +25,16 @@
     <!-- android -->
     <platform name="android">
 
-        <config-file target="res/xml/config.xml" parent="plugins">
+        <config-file target="res/xml/config.xml" parent="/*/plugins">
             <plugin name="AppVersion" value="uk.co.whiteoctober.cordova.AppVersion" />
         </config-file>
 
-        <!-- cordova plugin src files -->
-        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova/AppVersion.java" />
+        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
     <!-- ios -->
     <platform name="ios">
-        <plugins-plist key="AppVersion" />
+        <plugins-plist key="AppVersion" string="AppVersion" />
 
         <config-file target="config.xml" parent="plugins">
             <plugin name="AppVersion" value="AppVersion" />
