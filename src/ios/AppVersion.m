@@ -3,9 +3,11 @@
 
 @implementation AppVersion
 
-- (void)getVersionNumber:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
+- (void)getVersionNumber:(CDVInvokedUrlCommand*)command
+{
+
+    NSString* callbackId = command.callbackId;
     NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    NSString* callbackId = [arguments objectAtIndex:0];
 
     CDVPluginResult* pluginResult = nil;
     NSString* javaScript = nil;
