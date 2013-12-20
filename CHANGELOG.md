@@ -1,3 +1,7 @@
+### 0.1.2
+
+* Updated for Cordova 3 and above (thanks to Russell Keith-Magee [freakboy3742](https://github.com/freakboy3742)
+
 ### 0.1.1
 
 * Improved README

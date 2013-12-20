@@ -2,6 +2,6 @@
 
 @interface AppVersion : CDVPlugin
 
-- (void)getVersionNumber:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)getVersionNumber:(CDVInvokedUrlCommand*)command;
 
 @end
