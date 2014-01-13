@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
 
-public class AppVersion extends Plugin {
+public class AppVersion extends CordovaPlugin {
 
 	@Override
 	public PluginResult execute(String arg0, JSONArray arg1, String arg2) {
