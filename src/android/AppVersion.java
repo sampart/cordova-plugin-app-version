@@ -13,12 +13,12 @@ public class AppVersion extends CordovaPlugin {
 		try {	
 			if (action.equals("getVersionNumber")) {
 				PackageManager packageManager = this.cordova.getActivity().getPackageManager();
-				callbackContext.success(PluginResult.Status.OK, packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
+				callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
 			return true;
 			}
 			return false;
 		} catch (NameNotFoundException e) {
-			callbackContext.success('Error');
+			callbackContext.success("N/A");
 			return true;
 		}
 	}
