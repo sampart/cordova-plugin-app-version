@@ -1,7 +1,7 @@
 package uk.co.whiteoctober.cordova;
 
-import org.apache.cordova.api.Plugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
