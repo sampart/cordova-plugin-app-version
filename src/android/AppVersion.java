@@ -1,21 +1,25 @@
 package uk.co.whiteoctober.cordova;
 
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
+import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
 
 public class AppVersion extends CordovaPlugin {
-
 	@Override
-	public PluginResult execute(String arg0, JSONArray arg1, String arg2) {
+        public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-		try {
-			PackageManager packageManager = this.cordova.getActivity().getPackageManager();
-			return new PluginResult(PluginResult.Status.OK, packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
+		try {	
+			if (action.equals("getVersionNumber")) {
+				PackageManager packageManager = this.cordova.getActivity().getPackageManager();
+				callbackContext.success(PluginResult.Status.OK, packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
+			return true;
+			}
+			return false;
 		} catch (NameNotFoundException e) {
-			return new PluginResult(PluginResult.Status.ERROR, "");
+			callbackContext.success('Error');
+			return true;
 		}
 	}
 
