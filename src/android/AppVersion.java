@@ -3,6 +3,9 @@ package uk.co.whiteoctober.cordova;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
 
