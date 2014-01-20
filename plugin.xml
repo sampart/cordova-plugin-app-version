@@ -24,11 +24,11 @@
 
     <!-- android -->
     <platform name="android">
-
-        <config-file target="res/xml/config.xml" parent="/*/plugins">
-            <plugin name="AppVersion" value="uk.co.whiteoctober.cordova.AppVersion" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppVersion">
+                <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+            </feature>   
         </config-file>
-
         <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
