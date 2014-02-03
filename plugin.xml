@@ -15,7 +15,7 @@
             Cordova 2.8.0 is all I have tested on - it should work fine with earlier versions.
             Please modify the below line, test, and submit a PR if it works for you.
         -->
-        <engine name="cordova" version=">=2.8.0" />
+        <engine name="cordova" version=">=3.0.0" />
     </engines>
 
     <js-module src="www/AppVersionPlugin.js">
@@ -24,11 +24,11 @@
 
     <!-- android -->
     <platform name="android">
-
-        <config-file target="res/xml/config.xml" parent="/*/plugins">
-            <plugin name="AppVersion" value="uk.co.whiteoctober.cordova.AppVersion" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppVersion">
+                <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+            </feature>   
         </config-file>
-
         <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
