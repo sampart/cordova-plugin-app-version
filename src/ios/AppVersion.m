@@ -7,7 +7,7 @@
 {
 
     NSString* callbackId = command.callbackId;
-    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 
     CDVPluginResult* pluginResult = nil;
     NSString* javaScript = nil;
