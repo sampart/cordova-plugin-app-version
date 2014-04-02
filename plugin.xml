@@ -45,4 +45,11 @@
         <header-file src="src/ios/AppVersion.h" />
         <source-file src="src/ios/AppVersion.m" />
     </platform>
+	
+    <!-- windows8 -->
+    <platform name="windows8">
+        <js-module src="src/windows8/AppVersionProxy.js" name="AppVersionProxy">
+            <merges target=""/>
+        </js-module>
+    </platform>
 </plugin>
