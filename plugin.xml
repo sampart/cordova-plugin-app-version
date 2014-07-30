@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="uk.co.whiteoctober.cordova.AppVersion"
-    version="0.1.3">
+    version="0.1.4">
 
     <name>AppVersion</name>
     <description>
@@ -52,4 +52,15 @@
             <merges target=""/>
         </js-module>
     </platform>
+	
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppVersion">
+                <param name="wp-package" value="AppVersion"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/wp8/AppVersion.cs" />
+    </platform>	
 </plugin>
