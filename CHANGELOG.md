@@ -1,3 +1,9 @@
+### 0.1.4
+
+* Return version number, not build number on iOS (thanks to http://www.humancopy.net)
+* Support for Windows phone 8 (thanks to Cristi Badila / Gediminas Šaltenis)
+* Support for AngularJS as well as jQuery (thanks to Matias Singers, [Red Ape Solutions](http://www.redapesolutions.com/))
+
 ### 0.1.3
 
 * Fixes to Android for Corova 3 and above (thanks to AxoInsanit)
