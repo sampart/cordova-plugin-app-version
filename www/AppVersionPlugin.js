@@ -5,6 +5,8 @@ var getAppVersion = function (success, fail) {
     if(window.jQuery){
       dfr = jQuery.Deferred();
     } else if(window.angular){
+      var injector = angular.injector(["ng"]);
+      var $q = injector.get("$q");
       dfr = $q.defer();
     } else {
       return console.error('AppVersion either needs a success callback, or jQuery/AngularJS defined for using promises');
