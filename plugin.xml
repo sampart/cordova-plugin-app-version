@@ -32,6 +32,18 @@
         </config-file>
         <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
+    
+    <!-- blackberry10 -->
+    <platform name="blackberry10">
+        <dependency id="com.blackberry.app" />
+        
+        <config-file target="www/config.xml" parent="/widget">
+            <feature name="AppVersion" value="AppVersion" />
+        </config-file>
+        <js-module src="www/blackberry10/AppVersionProxy.js" name="AppVersionProxy.js" >
+            <runs />
+        </js-module>
+    </platform>
 
     <!-- ios -->
     <platform name="ios">
