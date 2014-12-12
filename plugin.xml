@@ -28,15 +28,15 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppVersion">
                 <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
-            </feature>   
+            </feature>
         </config-file>
         <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
-    
+
     <!-- blackberry10 -->
     <platform name="blackberry10">
         <dependency id="com.blackberry.app" />
-        
+
         <config-file target="www/config.xml" parent="/widget">
             <feature name="AppVersion" value="AppVersion" />
         </config-file>
@@ -58,14 +58,14 @@
         <header-file src="src/ios/AppVersion.h" />
         <source-file src="src/ios/AppVersion.m" />
     </platform>
-	
+
     <!-- windows8 -->
     <platform name="windows8">
         <js-module src="src/windows8/AppVersionProxy.js" name="AppVersionProxy">
             <merges target=""/>
         </js-module>
     </platform>
-	
+
     <!-- wp8 -->
     <platform name="wp8">
         <config-file target="config.xml" parent="/*">
@@ -75,5 +75,5 @@
         </config-file>
 
         <source-file src="src/wp8/AppVersion.cs" />
-    </platform>	
+    </platform>
 </plugin>
