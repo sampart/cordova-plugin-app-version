@@ -1,3 +1,7 @@
+### 0.1.5
+
+* iOS: Return version number but log and fall back to build number if it is nil (thanks to [Eddy Verbruggen](https://github.com/EddyVerbruggen))
+
 ### 0.1.4
 
 * Return version number, not build number on iOS (thanks to http://www.humancopy.net)
