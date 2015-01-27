@@ -3,5 +3,6 @@
 @interface AppVersion : CDVPlugin
 
 - (void)getVersionNumber:(CDVInvokedUrlCommand*)command;
+- (void)getInternalVersion:(CDVInvokedUrlCommand*)command;
 
 @end
