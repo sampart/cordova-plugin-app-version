@@ -3,7 +3,7 @@
 "use strict";
 
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
-var getPromisedCordovaResult = function (command, success, fail) {
+var getPromisedCordovaExec = function (command, success, fail) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
     if (window.jQuery) {
@@ -26,15 +26,15 @@ var getPromisedCordovaResult = function (command, success, fail) {
 };
 
 var getAppVersion = function (success, fail) {
-  return getPromisedCordovaResult('getVersionNumber', success, fail);
+  return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
 getAppVersion.getVersionNumber = function (success, fail) {
-  return getPromisedCordovaResult('getVersionNumber', success, fail);
+  return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
 getAppVersion.getVersionCode = function (success, fail) {
-  return getPromisedCordovaResult('getVersionCode', success, fail);
+  return getPromisedCordovaExec('getVersionCode', success, fail);
 };
 
 module.exports = getAppVersion;
