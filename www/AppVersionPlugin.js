@@ -1,15 +1,19 @@
+/*jslint indent: 2 */
+/*global window, jQuery, angular, cordova */
+"use strict";
+
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
 var getPromisedCordovaResult = function (command, success, fail) {
-  var toReturn, deferred;
+  var toReturn, deferred, injector, $q;
   if (success === undefined) {
-    if(window.jQuery){
+    if (window.jQuery) {
       deferred = jQuery.Deferred();
       toReturn = deferred;
-    } else if(window.angular){
-      var injector = angular.injector(["ng"]);
-      var $q = injector.get("$q");
+    } else if (window.angular) {
+      injector = angular.injector(["ng"]);
+      $q = injector.get("$q");
       deferred = $q.defer();
-      toReturn = deferred.promise
+      toReturn = deferred.promise;
     } else {
       return console.error('AppVersion either needs a success callback, or jQuery/AngularJS defined for using promises');
     }
@@ -19,7 +23,7 @@ var getPromisedCordovaResult = function (command, success, fail) {
   // 5th param is NOT optional. must be at least empty array
   cordova.exec(success, fail, "AppVersion", command, []);
   return toReturn;
-}
+};
 
 var getAppVersion = function (success, fail) {
   return getPromisedCordovaResult('getVersionNumber', success, fail);
