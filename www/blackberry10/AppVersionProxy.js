@@ -13,6 +13,10 @@ module.exports = {
         }
         return blackberry.app.version;
     }
+
+    getAppBuildNumber: function( success, fail ) {
+        return "";
+    }
 };
 
 require("cordova/exec/proxy").add("AppVersion", module.exports);

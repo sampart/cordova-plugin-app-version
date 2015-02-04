@@ -26,4 +26,25 @@
     [self writeJavascript:javaScript];
 }
 
+
+- (void)getAppBuildNumber:(CDVInvokedUrlCommand*)command
+{
+
+    NSString* callbackId = command.callbackId;
+    NSString* buildNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    if (buildNumber == nil) {
+        NSLog(@"CFBundleVersion is nil, giving up");
+        // not calling error callback here to maintain backward compatibility
+      }
+    }
+
+    CDVPluginResult* pluginResult = nil;
+    NSString* javaScript = nil;
+
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    javaScript = [pluginResult toSuccessCallbackString:callbackId];
+
+    [self writeJavascript:javaScript];
+}
+
 @end

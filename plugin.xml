@@ -19,9 +19,14 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <js-module src="www/AppVersionPlugin.js">
-       <clobbers target="cordova.getAppVersion" />
-    </js-module>
+     <js-module src="www/AppVersionPlugin.js">
+        <clobbers target="cordova.getAppVersion" />
+     </js-module>
+
+     <js-module src="www/AppBuildNumberPlugin.js">
+        <clobbers target="cordova.getAppBuildNumber" />
+     </js-module>
+
 
     <!-- android -->
     <platform name="android">
