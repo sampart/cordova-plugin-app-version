@@ -18,12 +18,9 @@
     }
 
     CDVPluginResult* pluginResult = nil;
-    NSString* javaScript = nil;
 
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
-    javaScript = [pluginResult toSuccessCallbackString:callbackId];
-
-    [self writeJavascript:javaScript];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
 @end
