@@ -1,12 +1,11 @@
 #import "AppVersion.h"
-#import <Cordova/CDVPluginResult.h>
+#import <Cordova/CDV.h>
 
 @implementation AppVersion
 
 - (void)getVersionNumber:(CDVInvokedUrlCommand*)command
 {
 
-    NSString* callbackId = command.callbackId;
     NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     if (version == nil) {
       NSLog(@"CFBundleShortVersionString was nil, attempting CFBundleVersion");
@@ -18,12 +17,10 @@
     }
 
     CDVPluginResult* pluginResult = nil;
-    NSString* javaScript = nil;
 
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
-    javaScript = [pluginResult toSuccessCallbackString:callbackId];
 
-    [self writeJavascript:javaScript];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 @end
