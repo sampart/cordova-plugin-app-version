@@ -11,13 +11,19 @@ import android.content.pm.PackageManager;
 
 public class AppVersion extends CordovaPlugin {
 	@Override
-        public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
 		try {	
 			if (action.equals("getVersionNumber")) {
 				PackageManager packageManager = this.cordova.getActivity().getPackageManager();
 				callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
-			return true;
+				return true;
+			}
+			if (action.equals("getAppBuildNumber")) {
+				PackageManager packageManager = this.cordova.getActivity().getPackageManager();
+				callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
+				return true;
+
 			}
 			if (action.equals("getVersionCode")) {
 				PackageManager packageManager = this.cordova.getActivity().getPackageManager();
@@ -30,5 +36,4 @@ public class AppVersion extends CordovaPlugin {
 			return true;
 		}
 	}
-
 }

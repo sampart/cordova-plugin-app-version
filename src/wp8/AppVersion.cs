@@ -20,5 +20,14 @@ namespace Cordova.Extension.Commands
 
             this.DispatchCommandResult(new PluginResult(PluginResult.Status.OK, version));
         }
+
+
+        public void getAppBuildNumber(string empty)
+        {
+            //build number included in version number already
+            String buildNumber= "";
+
+            this.DispatchCommandResult(new PluginResult(PluginResult.Status.OK, buildNumber));
+        }
     }
 }
