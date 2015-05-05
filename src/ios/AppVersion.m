@@ -5,7 +5,6 @@
 
 - (void)getVersionNumber:(CDVInvokedUrlCommand*)command
 {
-
     NSString* callbackId = command.callbackId;
     NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     if (version == nil) {
@@ -17,13 +16,16 @@
       }
     }
 
-    CDVPluginResult* pluginResult = nil;
-    NSString* javaScript = nil;
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+}
 
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
-    javaScript = [pluginResult toSuccessCallbackString:callbackId];
-
-    [self writeJavascript:javaScript];
+- (void)getVersionCode:(CDVInvokedUrlCommand*)command
+{
+    NSString* callbackId = command.callbackId;
+    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
 @end
