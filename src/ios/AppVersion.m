@@ -28,4 +28,20 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
+// This will return the build number of the iOS app
+- (void)getVersionCode:(CDVInvokedUrlCommand*)command
+{
+
+    NSString* callbackId = command.callbackId;
+    NSString* buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+
+    CDVPluginResult* pluginResult = nil;
+    NSString* javaScript = nil;
+
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:buildVersion];
+    javaScript = [pluginResult toSuccessCallbackString:callbackId];
+
+    [self writeJavascript:javaScript];
+}
+
 @end
