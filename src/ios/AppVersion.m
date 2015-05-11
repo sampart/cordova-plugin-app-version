@@ -1,5 +1,5 @@
 #import "AppVersion.h"
-#import < Cordova / CDVPluginResult.h >
+#import <Cordova/CDVPluginResult.h>
 
 @implementation AppVersion
 
