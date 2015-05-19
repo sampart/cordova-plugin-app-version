@@ -41,4 +41,9 @@ getAppVersion.getAppName = function (success, fail) {
     return getPromisedCordovaExec('getAppName', success, fail);
 };
 
+getAppVersion.getPackageName = function (success, fail) {
+      return getPromisedCordovaExec('getPackageName', success, fail);
+    };
+
+
 module.exports = getAppVersion;

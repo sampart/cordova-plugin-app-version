@@ -36,4 +36,13 @@ CDVPluginResult * pluginResult =[CDVPluginResult resultWithStatus : CDVCommandSt
     [self.commandDelegate sendPluginResult : pluginResult callbackId : callbackId];
 }
 
+- (void)getPackageName:(CDVInvokedUrlCommand*)command
+{
+    NSString* callbackId = command.callbackId;
+    NSString* packageName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:packageName];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+}
+
+
 @end
