@@ -3,6 +3,14 @@
 
 @implementation AppVersion
 
+- (void)getAppName : (CDVInvokedUrlCommand *)command
+{
+    NSString * callbackId = command.callbackId;
+    NSString * version =[[[NSBundle mainBundle]infoDictionary]objectForKey :@"CFBundleDisplayName"];
+    CDVPluginResult * pluginResult =[CDVPluginResult resultWithStatus : CDVCommandStatus_OK messageAsString : version];
+    [self.commandDelegate sendPluginResult : pluginResult callbackId : callbackId];
+}
+
 - (void)getPackageName:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = command.callbackId;
