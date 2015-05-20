@@ -28,32 +28,44 @@ TODO: Write these instructions
 
 ## Use from Javascript
 
-If you are using jQuery, use:
+If you are using jQuery or AngularJS, promise style is supported. Use something like:
 
     cordova.getAppVersion.getVersionNumber().then(function (version) {
         $('.version').text(version);
     });
 
-    cordova.getAppVersion.getVersionCode().then(function (code) {
-        $('.code').text(code);
-    });
-
-If not:
+If not, pass a callback function:
 
     cordova.getAppVersion.getVersionNumber(function (version) {
         alert(version);
     });
 
-    cordova.getAppVersion.getVersionCode(function (code) {
-        alert(code);
-    });
+In addition to the version number you can also retrieve other details about your application:
+
+### getAppName
+
+Returns the name of the app. E.g. "My Awesome App"
+
+### getPackageName
+
+Returns the package name of the app - the reversed domain name app identifier like com.example.myawesomeapp
+
+### getVersionCode
+
+Returns the build identifier of the app
+
+### getVersionNumber
+
+Returns the version number of the app
 
 ## Credits
 
 Written by [Robert (Jamie) Munro](http://twitter.com/rjmunro) at
 [White October](http://whiteoctober.co.uk/)
 
-Code based on the following Stack Overflow posts:
+Various others have contributed fixes and new features. See the CHANGELOG.md for details.
+
+Original code based on the following Stack Overflow posts:
 
 * [iOS](http://stackoverflow.com/a/14713364/3408)
 * [Android](http://stackoverflow.com/a/3637686/3408)
