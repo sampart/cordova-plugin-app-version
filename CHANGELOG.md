@@ -1,3 +1,10 @@
+### 0.1.7
+
+* Add getPackageName feature (thanks to @gprasanth)
+* Add getAppName feature (thanks to @mirko77)
+* Fix for windows 8 (thanks to @deliriousrhino)
+* Fix version number in plugin.xml file
+
 ### 0.1.6
 
 * Split into two functions getAppVersion.getVersionNumber() and getAppVersion.getVersionCode() to return build number
