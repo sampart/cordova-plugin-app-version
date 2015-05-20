@@ -4,5 +4,4 @@ AppVersionProxy = {
     successCallback([version.major, version.minor, version.build, version.revision].join('.'));
   }  
 };
-
-require("cordova/windows8/commandProxy").add("AppVersion", AppVersionProxy);
+cordova.commandProxy.add("AppVersion", AppVersionProxy);
