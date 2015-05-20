@@ -5,7 +5,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
 
@@ -24,11 +24,20 @@ public class AppVersion extends CordovaPlugin {
 				callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
 			return true;
 			}
+			if (action.equals("getPackageName")) {
+            	callbackContext.success(this.cordova.getActivity().getPackageName());
+            	return true;
+            }
+			 if (action.equals("getAppName")) {
+                 PackageManager packageManager = this.cordova.getActivity().getPackageManager();
+                 ApplicationInfo app = packageManager.getApplicationInfo(this.cordova.getActivity().getPackageName(), 0);
+                 callbackContext.success((String)packageManager.getApplicationLabel(app));
+                 return true;
+            }
 			return false;
 		} catch (NameNotFoundException e) {
 			callbackContext.success("N/A");
 			return true;
 		}
 	}
-
 }
