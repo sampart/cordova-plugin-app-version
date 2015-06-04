@@ -33,6 +33,16 @@
         <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
+    <!-- amazon-fireos -->
+    <platform name="amazon-fireos">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppVersion">
+                <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
+    </platform>
+
     <!-- blackberry10 -->
     <platform name="blackberry10">
         <dependency id="com.blackberry.app" />
