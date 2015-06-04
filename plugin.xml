@@ -40,7 +40,7 @@
                 <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
             </feature>
         </config-file>
-        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
+        <source-file src="src/amazon-fireos/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
     <!-- blackberry10 -->
