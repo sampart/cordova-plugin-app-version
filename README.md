@@ -9,7 +9,7 @@ Reads the version of your app from the target build settings.
 If you are using [cordova-cli](https://github.com/apache/cordova-cli), install
 with:
 
-    cordova plugin add https://github.com/whiteoctober/cordova-plugin-app-version.git
+    cordova plugin add cordova-plugin-app-version
 
 ### With plugman
 
