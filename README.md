@@ -28,7 +28,7 @@ TODO: Write these instructions
 
 ## Use from Javascript
 
-If you are using jQuery or AngularJS, promise style is supported. Use something like:
+If you are using jQuery, AngularJS, WinJS or any Promise/A library (Bluebird), promise style is supported. Use something like:
 
     cordova.getAppVersion.getVersionNumber().then(function (version) {
         $('.version').text(version);
