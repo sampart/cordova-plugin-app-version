@@ -76,4 +76,12 @@
 
         <source-file src="src/wp8/AppVersion.cs" />
     </platform>
+	
+	  <!-- windows -->
+  <platform name="windows">
+    <js-module src="src/windows/AppVersionProxy.js" name="AppVersionProxy">
+      <merges target=""/>
+    </js-module>
+  </platform>
+  
 </plugin>
