@@ -9,7 +9,7 @@ Reads the version of your app from the target build settings.
 If you are using [cordova-cli](https://github.com/apache/cordova-cli), install
 with:
 
-    cordova plugin add https://github.com/whiteoctober/cordova-plugin-app-version.git
+    cordova plugin add cordova-plugin-app-version
 
 ### With plugman
 
@@ -28,7 +28,7 @@ TODO: Write these instructions
 
 ## Use from Javascript
 
-If you are using jQuery or AngularJS, promise style is supported. Use something like:
+If you are using jQuery, AngularJS, WinJS or any Promise/A library (Bluebird), promise style is supported. Use something like:
 
     cordova.getAppVersion.getVersionNumber().then(function (version) {
         $('.version').text(version);
