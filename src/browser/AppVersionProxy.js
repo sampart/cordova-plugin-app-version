@@ -1,15 +1,22 @@
 var configHelper = cordova.require('cordova/confighelper');
+var cacheConfig = null;
 
 function getXPathResult(xpath, successCallback, failCallback) {
+  if(cacheConfig) { getValue(xpath, cacheConfig, successCallback); return; }
   configHelper.readConfig(function(config) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(config.xhr.responseText, "application/xml");
-
-    var version = doc.evaluate(xpath, doc, null, XPathResult.STRING_TYPE, null);
-    successCallback(version.stringValue);
+    cacheConfig = config;
+    getValue(xpath, config, successCallback);
   }, function(err) {
     failCallback(err);
   });
+}
+
+function getValue(xpath, config, successCallback) {
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(config.xhr.responseText, "application/xml");
+
+  var version = doc.evaluate(xpath, doc, null, XPathResult.STRING_TYPE, null);
+  successCallback(version.stringValue);
 }
 
 AppVersionProxy = {
