@@ -19,7 +19,7 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <js-module src="www/AppVersionPlugin.js">
+    <js-module src="www/AppVersionPlugin.js" name="AppVersionPlugin">
        <clobbers target="cordova.getAppVersion" />
     </js-module>
 
