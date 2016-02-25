@@ -4,6 +4,7 @@ var cacheConfig = null;
 function getXPathResult(xpath, successCallback, failCallback) {
   if(cacheConfig) { getValue(xpath, cacheConfig, successCallback); return; }
   configHelper.readConfig(function(config) {
+    if(cacheConfig) { return; }
     cacheConfig = config;
     getValue(xpath, config, successCallback);
   }, function(err) {
