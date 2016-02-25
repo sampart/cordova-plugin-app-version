@@ -1,0 +1,31 @@
+var configHelper = cordova.require('cordova/confighelper');
+
+function getXPathResult(xpath, successCallback, failCallback) {
+  configHelper.readConfig(function(config) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(config.xhr.responseText, "application/xml");
+
+    var version = doc.evaluate(xpath, doc, null, XPathResult.STRING_TYPE, null);
+    successCallback(version.stringValue);
+  }, function(err) {
+    failCallback(err);
+  });
+}
+
+cordova.define("cordova-plugin-app-version.AppVersionProxy", function(require, exports, module) { AppVersionProxy = {
+  getVersionNumber: function (successCallback, failCallback, args) {
+    getXPathResult('/*[local-name()="widget"]/@version', successCallback, failCallback);
+  },
+  getAppName: function (successCallback, failCallback, args) {
+    getXPathResult('/*[local-name()="widget"]/*[local-name()="name"]', successCallback, failCallback);
+  },
+  getPackageName: function (successCallback, failCallback, args) {
+    getXPathResult('/*[local-name()="widget"]/@id', successCallback, failCallback);
+  },
+  getVersionCode: function (successCallback, failCallback, args) {
+    getXPathResult('/*[local-name()="widget"]/@version', successCallback, failCallback);
+  }
+};
+  cordova.commandProxy.add("AppVersion", AppVersionProxy);
+
+});
