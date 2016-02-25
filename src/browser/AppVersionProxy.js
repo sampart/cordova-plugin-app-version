@@ -12,7 +12,7 @@ function getXPathResult(xpath, successCallback, failCallback) {
   });
 }
 
-cordova.define("cordova-plugin-app-version.AppVersionProxy", function(require, exports, module) { AppVersionProxy = {
+AppVersionProxy = {
   getVersionNumber: function (successCallback, failCallback, args) {
     getXPathResult('/*[local-name()="widget"]/@version', successCallback, failCallback);
   },
@@ -26,6 +26,5 @@ cordova.define("cordova-plugin-app-version.AppVersionProxy", function(require, e
     getXPathResult('/*[local-name()="widget"]/@version', successCallback, failCallback);
   }
 };
-  cordova.commandProxy.add("AppVersion", AppVersionProxy);
 
-});
+cordova.commandProxy.add("AppVersion", AppVersionProxy);
