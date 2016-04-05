@@ -1,3 +1,6 @@
+### 0.1.9
+* Renamed Windows8 platform to Windows 
+
 ### 0.1.7
 
 * Add getPackageName feature (thanks to @gprasanth)

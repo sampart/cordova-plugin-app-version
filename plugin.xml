@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-app-version"
-    version="0.1.8">
+    version="0.1.9">
 
     <name>AppVersion</name>
     <description>
@@ -60,8 +60,8 @@
     </platform>
 
     <!-- windows8 -->
-    <platform name="windows8">
-        <js-module src="src/windows8/AppVersionProxy.js" name="AppVersionProxy">
+    <platform name="windows">
+        <js-module src="src/windows/AppVersionProxy.js" name="AppVersionProxy">
             <merges target=""/>
         </js-module>
     </platform>
