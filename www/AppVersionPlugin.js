@@ -22,7 +22,7 @@ var getPromisedCordovaExec = function (command, success, fail) {
       deferred = when.defer();
       success = deferred.resolve;
       fail = deferred.reject;
-      toReturn = deferred;
+      toReturn = deferred.promise;
     } else if (window.Promise) {
       toReturn = new Promise(function(c, e) {
         success = c;
