@@ -35,7 +35,7 @@
 
     <!-- blackberry10 -->
     <platform name="blackberry10">
-        <dependency id="com.blackberry.app" />
+        <dependency id="cordova-plugin-bb-app" />
 
         <config-file target="www/config.xml" parent="/widget">
             <feature name="AppVersion" value="AppVersion" />
