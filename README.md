@@ -58,6 +58,13 @@ Returns the build identifier of the app
 
 Returns the version number of the app
 
+### getMetaData(propertyName)
+
+Returns a custom property from app settings. This could be
+- a "meta-data" element from an Android manifest file
+- a custom element from an iOS Info.plist file
+- a custom element from a Windows .appx file
+
 ## Credits
 
 Written by [Robert (Jamie) Munro](http://twitter.com/rjmunro) at
