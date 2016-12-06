@@ -10,4 +10,6 @@
 
 - (void)getVersionCode:(CDVInvokedUrlCommand*)command;
 
+- (void)getMetaData:(CDVInvokedUrlCommand*)command;
+
 @end
