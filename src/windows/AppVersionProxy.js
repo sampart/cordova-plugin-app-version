@@ -28,6 +28,22 @@ AppVersionProxy = {
   getVersionCode: function (successCallback, failCallback, args) {
     var build = Windows.ApplicationModel.Package.current.id.version.build;
     successCallback(build);
+  },
+  getMetaData: function (successCallback, failCallback, args) {
+    Windows.ApplicationModel.Package.current.installedLocation.getFileAsync("config.xml").then(function (file) {
+      Windows.Data.Xml.Dom.XmlDocument.loadFromFileAsync(file).then(function (xdoc) {
+        xdoc.getElementsByTagName("preference").forEach(function(preference, index, array) {
+          var attributes = preference.attributes;
+          if ( attributes && attributes.length === 2 ) {
+            if ( attributes[0].nodeName === "name" && attributes[0].nodeValue === args[0] ) {
+              successCallback(attributes[1].nodeValue);
+            } else if ( attributes[1].nodeName === "name" && attributes[1].nodeValue === args[0] ) {
+              successCallback(attributes[0].nodeValue);
+            }
+          }
+        });
+      }, (failCallback || function(){}));
+    }, (failCallback || function(){}));
   }
 };
 cordova.commandProxy.add("AppVersion", AppVersionProxy);

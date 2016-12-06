@@ -63,7 +63,24 @@ Returns the version number of the app
 Returns a custom property from app settings. This could be
 - a "meta-data" element from an Android manifest file
 - a custom element from an iOS Info.plist file
-- a custom element from a Windows .appx file
+- a preference value from a Windows config.xml file
+
+Can be used in combination with [cordova-custom-config](https://github.com/dpa99c/cordova-custom-config) plugin. Example config.xml:
+```
+...
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="./application">
+           <meta-data android:name="ENVIRONMENT" android:value="DEVELOPMENT" />
+        </config-file>
+    </platform>
+    <platform name="ios">
+        <config-file platform="ios" target="*-Info.plist" parent="ENVIRONMENT"><string>DEVELOPMENT</string></config-file>
+    </platform>
+    <platform name="windows">
+        <preference name="ENVIRONMENT" value="DEVELOPMENT" />
+    </platform>
+...
+```
 
 ## Credits
 
