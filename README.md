@@ -66,7 +66,7 @@ Returns a custom property from app settings. This could be
 - a preference value from a Windows config.xml file
 
 Can be used in combination with [cordova-custom-config](https://github.com/dpa99c/cordova-custom-config) plugin. Example config.xml:
-```
+```xml
 ...
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="./application">
