@@ -1,6 +1,3 @@
-### 0.1.10
-* Support for Browser (thanks to Marcel Ernst)
-
 ### 0.1.9
 * Renamed Windows8 platform to Windows 
 
