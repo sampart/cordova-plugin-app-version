@@ -38,7 +38,14 @@ public class AppVersion extends CordovaPlugin {
       if (action.equals("getMetaData")) {
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         ApplicationInfo app = packageManager.getApplicationInfo(this.cordova.getActivity().getPackageName(), PackageManager.GET_META_DATA);
-        callbackContext.success((String)app.metaData.get(args.getString(0)));
+        Object metadata = app.metaData.get(args.getString(0));
+
+        if (metadata instanceof Integer) {
+          callbackContext.success((Integer)metadata);
+        } else {
+          callbackContext.success(metadata.toString());
+        }
+
         return true;
       }
       return false;
