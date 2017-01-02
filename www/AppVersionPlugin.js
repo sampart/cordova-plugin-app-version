@@ -3,7 +3,7 @@
 "use strict";
 
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
-var getPromisedCordovaExec = function (command, success, fail) {
+var getPromisedCordovaExec = function (command, success, fail, params) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
     if (window.jQuery) {
@@ -38,28 +38,32 @@ var getPromisedCordovaExec = function (command, success, fail) {
     }
   }
   // 5th param is NOT optional. must be at least empty array
-  cordova.exec(success, fail, "AppVersion", command, []);
+  cordova.exec(success, fail, "AppVersion", command, params);
   return toReturn;
 };
 
 var getAppVersion = function (success, fail) {
-  return getPromisedCordovaExec('getVersionNumber', success, fail);
+  return getPromisedCordovaExec('getVersionNumber', success, fail, []);
 };
 
 getAppVersion.getAppName = function (success, fail) {
-  return getPromisedCordovaExec('getAppName', success, fail);
+  return getPromisedCordovaExec('getAppName', success, fail, []);
 };
 
 getAppVersion.getPackageName = function (success, fail) {
-  return getPromisedCordovaExec('getPackageName', success, fail);
+  return getPromisedCordovaExec('getPackageName', success, fail, []);
 };
 
 getAppVersion.getVersionNumber = function (success, fail) {
-  return getPromisedCordovaExec('getVersionNumber', success, fail);
+  return getPromisedCordovaExec('getVersionNumber', success, fail, []);
 };
 
 getAppVersion.getVersionCode = function (success, fail) {
-  return getPromisedCordovaExec('getVersionCode', success, fail);
+  return getPromisedCordovaExec('getVersionCode', success, fail, []);
+};
+
+getAppVersion.getMetaData = function (property, success, fail) {
+  return getPromisedCordovaExec('getMetaData', success, fail, [ property ]);
 };
 
 module.exports = getAppVersion;

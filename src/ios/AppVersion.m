@@ -44,4 +44,14 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
+- (void)getMetaData:(CDVInvokedUrlCommand*)command
+{
+    NSString* callbackId = command.callbackId;
+    // get property parameter content
+    NSString *propertyName = command.arguments.count == 0 ? @"" : [command.arguments objectAtIndex:0];
+    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:propertyName];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+}
+
 @end
