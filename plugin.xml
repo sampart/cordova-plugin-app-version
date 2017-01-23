@@ -62,7 +62,7 @@
     <!-- windows8 -->
     <platform name="windows">
         <js-module src="src/windows/AppVersionProxy.js" name="AppVersionProxy">
-            <merges target=""/>
+            <runs />
         </js-module>
     </platform>
 
