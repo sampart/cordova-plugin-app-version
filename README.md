@@ -58,7 +58,7 @@ Returns the build identifier of the app
 
 Returns the version number of the app
 
-## Credits
+## Credits
 
 Written by [Robert (Jamie) Munro](http://twitter.com/rjmunro) at
 [White October](http://whiteoctober.co.uk/)
