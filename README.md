@@ -2,6 +2,8 @@
 
 Reads the version of your app from the target build settings.
 
+We're [looking for maintainers](https://github.com/whiteoctober/cordova-plugin-app-version/issues/100)!
+
 ## Installation
 
 ### With cordova-cli
