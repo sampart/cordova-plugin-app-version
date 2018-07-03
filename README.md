@@ -54,11 +54,20 @@ Returns the package name of the app - the reversed domain name app identifier li
 
 ### getVersionCode
 
-Returns the build identifier of the app
+Returns the build identifier of the app as a integer (a `number`), e.g.: `10203`
+
+Cordova computes the version code automatically based on the app version (from the `config.xml`), unless explicitly overwritten. It [uses the algorithm](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#setting-the-version-code):
+
+```
+versionCode = MAJOR * 10000 + MINOR * 100 + PATCH
+```
+
+So, an app with a version `1.2.3` would have a "version code" with the integer `10203`.
+
 
 ### getVersionNumber
 
-Returns the version number of the app
+Returns the version number of the app as a `string`, e.g. `1.2.3`. Cordova takes it from the `config.xml` file.
 
 ## Credits
 
