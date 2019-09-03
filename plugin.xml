@@ -76,4 +76,17 @@
 
         <source-file src="src/wp8/AppVersion.cs" />
     </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppVersion">
+                <param name="browser-package" value="AppVersion" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/AppVersionProxy.js" name="AppVersionProxy">
+            <runs />
+        </js-module>
+    </platform>
 </plugin>
