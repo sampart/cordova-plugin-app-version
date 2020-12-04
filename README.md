@@ -2,7 +2,7 @@
 
 Reads the version of your app from the target build settings.
 
-We're [looking for maintainers](https://github.com/whiteoctober/cordova-plugin-app-version/issues/100)!
+We're [looking for maintainers](https://github.com/sampart/cordova-plugin-app-version/issues/100)!
 
 ## Installation
 
@@ -18,7 +18,7 @@ with:
 With a plain [plugman](https://github.com/apache/cordova-plugman), you should be
 able to install with something like:
 
-    plugman --platform <ios|android> --project <directory> --plugin https://github.com/whiteoctober/cordova-plugin-app-version.git
+    plugman --platform <ios|android> --project <directory> --plugin https://github.com/sampart/cordova-plugin-app-version.git
 
 ### Manually in iOS
 
