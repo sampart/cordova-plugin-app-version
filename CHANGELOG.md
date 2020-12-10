@@ -1,5 +1,19 @@
+### 0.1.12
+
+* Fixed version mismatch
+* Fixed browser platform install warning by removing unneeded feature tag
+
+### 0.1.11
+
+* Switched to new repo location
+
+### 0.1.10
+
+* Added browser platform
+
 ### 0.1.9
-* Renamed Windows8 platform to Windows 
+
+* Renamed Windows8 platform to Windows
 
 ### 0.1.7
 
