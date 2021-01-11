@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/sampart/cordova-plugin-app-version/issues"
   },
-  "homepage": "https://github.com/sampart/cordova-plugin-app-version#readme"
+  "homepage": "https://github.com/sampart/cordova-plugin-app-version#readme",
+  "types": "./types/index.d.ts"
 }
