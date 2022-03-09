@@ -1,3 +1,7 @@
+### 0.1.13
+
+* [iOS: getAppName to return localized value (like Android)](https://github.com/sampart/cordova-plugin-app-version/pull/127)
+
 ### 0.1.12
 
 * Fixed version mismatch
