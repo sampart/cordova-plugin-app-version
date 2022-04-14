@@ -27,7 +27,7 @@ function readConfig(success, fail) {
         xhr.addEventListener("error", function () {
             fail(e);
         });
-        xhr.open("get", "../config.xml", true);
+        xhr.open("get", "config.xml", true);
         xhr.send();
     }
     else {
