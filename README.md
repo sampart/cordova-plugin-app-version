@@ -1,4 +1,4 @@
-# Cordova AppVersion plugin [unsupported]
+# Cordova AppVersion plugin [not maintained]
 
 Reads the version of your app from the target build settings.
 
