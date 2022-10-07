@@ -6,8 +6,9 @@
 - (void)getAppName : (CDVInvokedUrlCommand *)command
 {
     NSString * callbackId = command.callbackId;
-    NSString * version =[[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:@"CFBundleDisplayName"];
-    CDVPluginResult * pluginResult =[CDVPluginResult resultWithStatus : CDVCommandStatus_OK messageAsString : version];
+    NSString * localizedAppName = [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:@"CFBundleDisplayName"];
+    NSString * appName = [[[NSBundle mainBundle] infoDictionary]objectForKey :@"CFBundleDisplayName"];
+    CDVPluginResult * pluginResult =[CDVPluginResult resultWithStatus : CDVCommandStatus_OK messageAsString : localizedAppName != nil ? localizedAppName : appName];
     [self.commandDelegate sendPluginResult : pluginResult callbackId : callbackId];
 }
 
