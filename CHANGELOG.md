@@ -31,7 +31,7 @@
 * Fix for windows 8 (thanks to @deliriousrhino)
 * Fix version number in plugin.xml file
 
-### 0.1.6
+### 0.1.6
 
 * Split into two functions getAppVersion.getVersionNumber() and getAppVersion.getVersionCode() to return build number
 * Fix a deprecation warning in iOS version
@@ -46,7 +46,7 @@
 * Support for Windows phone 8 (thanks to Cristi Badila / Gediminas Šaltenis)
 * Support for AngularJS as well as jQuery (thanks to Matias Singers, [Red Ape Solutions](http://www.redapesolutions.com/))
 
-### 0.1.3
+### 0.1.3
 
 * Fixes to Android for Corova 3 and above (thanks to AxoInsanit)
 
